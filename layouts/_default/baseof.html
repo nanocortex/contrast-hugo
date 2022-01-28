@@ -28,9 +28,13 @@
 
 
   <footer>
-    <div>
-      <!-- Copyright TODO -->
-    </div>
+    <div class="copyright">
+      <p>© {{ if isset .Site.Params "author"}}{{ .Site.Params.author }}, {{end}}{{ now.Year }}<br>
+      Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>&nbsp;&nbsp; Theme: <a target="_blank" rel="noopener noreferrer" href="https://github.com/niklasbuschmann/contrast-hugo">contrast-hugo</a>.<br>
+      </p>  
+    </div> 
+
+    <!-- Copyright TODO -->
     <nav>
       {{ range .Site.Menus.social }}
       <a href="{{ .URL }}">

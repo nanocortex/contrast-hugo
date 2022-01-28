@@ -248,3 +248,12 @@ ul.post-tags {
   font-size: 0.8em;
   color: #909194;
 }
+
+.copyright {
+  font-size: 0.8em;
+  color: #909194;
+}
+
+.copyright a {
+  color: #68f;
+}
