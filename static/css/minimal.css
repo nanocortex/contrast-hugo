@@ -31,6 +31,21 @@ body {
   flex-direction: column;
 }
 
+[data-theme="dark"] body {
+    background: #212228;
+    color: #ffffff;
+}
+
+[data-theme="light"] body {
+  background: #ffffff;
+  color: #212228;
+}
+
+[data-theme="light"] body > header, [data-theme="light"] body > footer {
+    background: #2d2e36;
+    color: #ffffff;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     background: #212228;
@@ -256,4 +271,12 @@ ul.post-tags {
 
 .copyright a {
   color: #68f;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+}
+.top-nav nav {
+  margin-right: 1rem;
 }
