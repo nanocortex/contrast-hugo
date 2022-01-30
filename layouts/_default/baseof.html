@@ -10,6 +10,11 @@
   <link rel="stylesheet" href="{{ .Site.BaseURL }}css/{{ if .Site.Params.minimal }}minimal.css{{ else }}index.css{{ end }}">
   <link rel="canonical" href="{{ .Permalink }}">
   <link rel="alternate" type="application/rss+xml" href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" title="{{ .Site.Title }}">
+
+  {{ if and .Site.Params.umamiUrl .Site.Params.umamiToken }}
+    <script async defer data-website-id="{{ .Site.Params.umamiToken }}" src="{{ .Site.Params.umamiUrl }}"></script>
+  {{ end }}
+
   {{- if or .Params.math .Site.Params.math }}
   {{- end }}
 
@@ -23,7 +28,7 @@
         </a>
         {{ end }}
       </nav>
-      {{ partial "theme-switcher.html" . }}   
+      {{ partial "theme-switcher.html" . }}
     </div>
   </header>
 
@@ -34,8 +39,8 @@
     <div class="copyright">
       <p>© {{ if isset .Site.Params "author"}}{{ .Site.Params.author }}, {{end}}{{ now.Year }}<br>
       Powered by <a target="_blank" rel="noopener noreferrer" href="https://gohugo.io/">Hugo</a>&nbsp;&nbsp; Theme: <a target="_blank" rel="noopener noreferrer" href="https://github.com/niklasbuschmann/contrast-hugo">contrast-hugo</a>.<br>
-      </p>  
-    </div> 
+      </p>
+    </div>
     <nav>
       {{ range .Site.Menus.social }}
       <a href="{{ .URL }}">
